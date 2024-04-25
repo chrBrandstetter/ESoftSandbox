@@ -9,14 +9,17 @@ public class FindeMinimum {
         //int[] numbers = {1,-2,1};
         //int[] numbers = {2,1,-1};
         int[] numbers = {3,1,2};
-        Out.print(findMin(numbers));
+
+        int min = findMin(numbers);						// returns -1 in case no minimum can be identified
+        if (min < 0) Out.print("No minimum found!");
+        else Out.print("Minimum: " + min);
     }
 
     static int findMin(int[] numbers){
-        int min = 10;
         if(numbers == null || numbers.length == 0 ){
-            Out.print("Array is empty");
+            return -1;
         }else{
+            int min = numbers[0];
             for(int i = 0; i < numbers.length; i++){
                 if(numbers[i] < min){
                     min = numbers[i];
@@ -24,6 +27,5 @@ public class FindeMinimum {
             }
             return min;
         }
-        return -1;
     }
 }
